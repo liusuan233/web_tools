@@ -1,4 +1,6 @@
-from flask import render_template
+from os.path import exists
+
+from flask import render_template, Blueprint
 from app import create_app
 
 
@@ -6,7 +8,7 @@ app = create_app()
 # 主页路由
 @app.route('/home')
 def home():
-    return render_template('home.html',title="下载页面")
+    return render_template('home.html')
 # 下载页面路由
 @app.route('/download')
 def download():
@@ -15,10 +17,15 @@ def download():
 @app.route('/faq')
 def faq():
     return render_template('faq.html')
-# python的使用指南路由
-@app.route('/PythonGuide')
-def PythonGuide():
-    return render_template('AppGuide/PythonGuide.html')
+
+# 应用安装指南路由
+@app.route('/AppGuide/<string:guide_name>')
+def Guide(guide_name):
+    if not exists("./templates/AppGuide/"+guide_name+'.html'):
+        return render_template('404.html')
+    return render_template('AppGuide/'+guide_name+'.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True,port=6677)

@@ -1,0 +1,29 @@
+home-btn-container {
+            display: flex; /* 使用Flexbox布局 */
+            align-items: center; /* 居中 */
+}
+
+
+/* 按钮样式 */
+.home-btn {
+    background-color: #007BFF; /* 设置背景颜色 */
+    color: white; /* 设置文字颜色 */
+    border: none; /* 去掉边框 */
+    border-radius: 5px; /* 边角圆滑 */
+    padding: 10px 20px; /* 按钮内边距 */
+    font-size: 16px; /* 字体大小 */
+    cursor: pointer; /* 鼠标悬停时变为指针 */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 添加背景颜色和缩放的过渡效果 */
+}
+
+/* 悬停效果 */
+.home-btn:hover {
+    background-color: #0056b3; /* 悬停时背景颜色变化 */
+    transform: scale(1.05); /* 悬停时稍微放大 */
+}
+
+/* 点击时效果 */
+.home-btn:active {
+    background-color: #004080; /* 点击时背景颜色变化 */
+    transform: scale(0.98); /* 点击时稍微缩小 */
+}

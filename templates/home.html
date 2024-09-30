@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>织梦者</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homebtn.css') }}">
 </head>
 <body>
 
-<h1 >Welcome to 织梦者</h1>
-<a href="/download"><button class="download-btn" >软件下载</button></a>
-<button class="tool-btn">工具合集</button>
-<button class="faq-btn">常见问题</button>
-
+<h1>Welcome to 织梦者</h1>
+<div class="home-btn-container">
+<a href="/download"><button class="home-btn">软件下载</button></a>
+<a href="/tools"><button class="home-btn">工具合集</button></a>
+<a href="/faq"><button class="home-btn">常见问题</button></a>
+</div>
 </body>
 </html>
